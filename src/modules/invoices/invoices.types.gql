@@ -1,0 +1,22 @@
+scalar Date
+
+type Invoice {
+    _id: ID 
+    name: String 
+    description:String
+    creator:User
+}
+
+type Query {
+    invoices:[Invoice]
+    invoice(id:ID):Invoice
+}
+
+type Mutation {
+    createInvoice(name: String, description:String, creator_id: ID): Res
+}
+
+type Res{
+    data: Date
+    status:Int
+}
